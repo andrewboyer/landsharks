@@ -54,10 +54,23 @@ public class PlayerMovement : MonoBehaviour {
 				rb.AddForce (Vector2.up * jumpForce);
 
 		}
-		
-	}
 
-	bool OnGround () {
+
+        // Dropping through platforms:
+        // TODO: Begin Collisions after the player falls through the platform.
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            && OnGround())
+        {
+            if (OnGround().collider.gameObject.layer == LayerMask.NameToLayer("Drop Platform"))
+            {
+                BoxCollider2D coll = GetComponent<BoxCollider2D>();
+                Physics2D.IgnoreCollision(coll, OnGround().collider);
+            }
+        }
+    }
+
+    // Cast a line to check whether the player is on the ground
+	RaycastHit2D OnGround () {
 
 		//find width and height of character
 		BoxCollider2D coll = GetComponent<BoxCollider2D> ();
@@ -73,7 +86,6 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 p2 = new Vector2 (pos.x + width / 2f - 0.01f, pos.y - height / 2f - 0.02f);
 
 		return Physics2D.Linecast (p1, p2);
-
 	}
 
 }
