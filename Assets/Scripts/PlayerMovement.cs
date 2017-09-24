@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour {
 	public float runSpeed;
 	public float jumpForce;
 
-	public GameObject po1;
-	public GameObject po2;
-
 	// Use this for initialization
 	void Start () {
 
@@ -23,8 +20,6 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		Debug.Log (OnGround ());
 
 		//horizontal movement:
 		float velo = 0f;
@@ -55,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		} else {
 
-			if (Input.GetKeyDown (KeyCode.UpArrow) && OnGround())
+			if (Input.GetKeyDown (KeyCode.UpArrow) && OnGround ())
 				rb.AddForce (Vector2.up * jumpForce);
 
 		}
@@ -76,9 +71,6 @@ public class PlayerMovement : MonoBehaviour {
 		//p1 and p2 are the ends of that line
 		Vector2 p1 = new Vector2 (pos.x - width / 2f + 0.01f, pos.y - height / 2f - 0.02f);
 		Vector2 p2 = new Vector2 (pos.x + width / 2f - 0.01f, pos.y - height / 2f - 0.02f);
-
-		po1.transform.position = p1;
-		po2.transform.position = p2;
 
 		return Physics2D.Linecast (p1, p2);
 
