@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 224210163}
   m_Layer: 0
   m_Name: Person
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,8 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadow: 0
+  dropping: 0
   runSpeed: 5
-  jumpForce: 500
+  jumpForce: 750
 --- !u!50 &224210164
 Rigidbody2D:
   serializedVersion: 4
@@ -235,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224210162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: 0, z: 0}
+  m_LocalPosition: {x: -3.74, y: 2.05, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -252,6 +253,7 @@ GameObject:
   - component: {fileID: 463566206}
   - component: {fileID: 463566204}
   - component: {fileID: 463566205}
+  - component: {fileID: 463566208}
   m_Layer: 8
   m_Name: Drop Platform
   m_TagString: Untagged
@@ -330,12 +332,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463566203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -2.17, z: 0}
+  m_LocalPosition: {x: -5.33, y: -0.53, z: 0}
   m_LocalScale: {x: 6.245875, y: 0.26812524, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &463566208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 463566203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b780fb8417e3d804dbdcba080f615d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  human: {fileID: 224210162}
+  shadow: {fileID: 0}
 --- !u!1 &1562329372
 GameObject:
   m_ObjectHideFlags: 0
