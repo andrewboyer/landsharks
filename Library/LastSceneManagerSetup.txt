@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/sample_room.unity
-=======
 - path: Assets/Scenes/PlatformTypes.unity
->>>>>>> b1700738de56a9d6b5e159e8be2a467400d73bd4
   isLoaded: 1
   isActive: 1
