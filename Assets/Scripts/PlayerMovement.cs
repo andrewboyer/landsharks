@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public bool shadow;
-    [HideInInspector] public bool dropping = false;
 
 	private Rigidbody2D rb;
     private Collision platformColl;
@@ -64,13 +63,9 @@ public class PlayerMovement : MonoBehaviour {
             && OnGround()
             && OnGround().collider.gameObject.layer == LayerMask.NameToLayer("Drop Platform"))
         {
-                dropping = true;
+            GameObject platform = OnGround().collider.gameObject;
+            platform.GetComponent<PlatformCollider>().drop = true;
         }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        
     }
 
     // Cast a line to check whether the player is on the ground

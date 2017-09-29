@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformCollider : MonoBehaviour
 {
+    public bool drop = false;
     public GameObject human;
     public GameObject shadow;
 
@@ -36,33 +37,30 @@ public class PlatformCollider : MonoBehaviour
         float platformTop = transform.position.y + platformHeight / 2 + 0.01f;
         float platformBot = transform.position.y - platformHeight / 2 - 0.01f;
 
-        bool drop = false;
-                
-        // If player drops all the way through platform, stop dropping.
-        if (playerTop < platformBot)
-        {
-            // If the player is not dropping, then drop will remain false.
-            player.GetComponent<PlayerMovement>().dropping = false;
-        }
-        // If player is below the platform, but not all the way through.
-        else if (playerBot < transform.position.y)
-        {
-            drop = true;
-        }
 
+                
         // If the player is moving upwards, don't collide
         if (playerRigidbody.velocity.y > 0.1f)
         {
             drop = true;
         }
-        //If the player is dropping through a platform, don't collide.
-        else if (player.GetComponent<PlayerMovement>().dropping)
+
+        // If the player is at the midpoint of the platform
+        if (playerTop > platformTop && platformBot > playerBot)
         {
             drop = true;
         }
 
-        // If drop was never turned to true above, then collide.
-        // If drop was turned to true above, don't collide.
-        Physics2D.IgnoreCollision(coll, playerColl, drop);
+
+        if (drop)
+        {
+            // If player drops all the way through platform, stop dropping.
+            if (playerTop < platformBot || platformTop < playerBot)
+            {
+                drop = false;
+            }
+
+            Physics2D.IgnoreCollision(coll, playerColl, drop);
+        }
     }
 }
