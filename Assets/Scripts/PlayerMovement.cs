@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public bool shadow;
 
 	private Rigidbody2D rb;
+    private Collision platformColl;
 
 	public float runSpeed;
 	public float jumpForce;
@@ -17,47 +18,58 @@ public class PlayerMovement : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		//horizontal movement:
-		float velo = 0f;
+    // Update is called once per frame
+    void Update() {
 
-		if (shadow) {
+        //horizontal movement:
+        float velo = 0f;
 
-			if (Input.GetKey (KeyCode.A))
-				velo -= runSpeed;
-			if (Input.GetKey (KeyCode.D))
-				velo += runSpeed;
+        if (shadow) {
 
-		} else {
+            if (Input.GetKey(KeyCode.A))
+                velo -= runSpeed;
+            if (Input.GetKey(KeyCode.D))
+                velo += runSpeed;
 
-			if (Input.GetKey (KeyCode.LeftArrow))
-				velo -= runSpeed;
-			if (Input.GetKey (KeyCode.RightArrow))
-				velo += runSpeed;
+        } else {
 
-		}
+            if (Input.GetKey(KeyCode.LeftArrow))
+                velo -= runSpeed;
+            if (Input.GetKey(KeyCode.RightArrow))
+                velo += runSpeed;
 
-		rb.velocity = new Vector2 (velo, rb.velocity.y);
+        }
 
-		//jumping:
-		if (shadow) {
+        rb.velocity = new Vector2(velo, rb.velocity.y);
 
-			if (Input.GetKeyDown (KeyCode.W) && OnGround())
-				rb.AddForce (Vector2.up * jumpForce);
+        //jumping:
+        if (shadow) {
 
-		} else {
+            if (Input.GetKeyDown(KeyCode.W) && OnGround())
+                rb.AddForce(Vector2.up * jumpForce);
 
-			if (Input.GetKeyDown (KeyCode.UpArrow) && OnGround ())
-				rb.AddForce (Vector2.up * jumpForce);
+        } else {
 
-		}
-		
-	}
+            if (Input.GetKeyDown(KeyCode.UpArrow) && OnGround())
+                rb.AddForce(Vector2.up * jumpForce);
 
-	bool OnGround () {
+        }
+
+
+        // Dropping through platforms:
+        // TODO: Begin Collisions after the player falls through the platform.
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            && OnGround()
+            && OnGround().collider.gameObject.layer == LayerMask.NameToLayer("Drop Platform"))
+        {
+            GameObject platform = OnGround().collider.gameObject;
+            platform.GetComponent<PlatformCollider>().drop = true;
+        }
+    }
+
+    // Cast a line to check whether the player is on the ground
+    RaycastHit2D OnGround () {
 
 		//find width and height of character
 		BoxCollider2D coll = GetComponent<BoxCollider2D> ();
@@ -73,7 +85,6 @@ public class PlayerMovement : MonoBehaviour {
 		Vector2 p2 = new Vector2 (pos.x + width / 2f - 0.01f, pos.y - height / 2f - 0.02f);
 
 		return Physics2D.Linecast (p1, p2);
-
 	}
 
 }
