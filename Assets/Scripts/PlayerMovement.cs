@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool shadow;
 
-	private Rigidbody2D rb;
-    private Collision platformColl;
+    public float runSpeed;
+    public float jumpForce;
 
-	public float runSpeed;
-	public float jumpForce;
+    private Rigidbody2D rb;
+    private Collision platformColl;
+    private bool jumping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -43,16 +44,25 @@ public class PlayerMovement : MonoBehaviour {
 
         rb.velocity = new Vector2(velo, rb.velocity.y);
 
-        //jumping:
+        //If the player has jumped and reaches the ground, let the player jump.
+        if (jumping && OnGround()) jumping = false;
+
+        //If the player is not jumping and the jump button is pressed:
         if (shadow) {
 
-            if (Input.GetKeyDown(KeyCode.W) && OnGround())
+            if (!jumping && Input.GetKeyDown(KeyCode.W))
+            {
+                jumping = true;
                 rb.AddForce(Vector2.up * jumpForce);
+            }
 
         } else {
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) && OnGround())
+            if (!jumping && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                jumping = true;
                 rb.AddForce(Vector2.up * jumpForce);
+            }
 
         }
 
