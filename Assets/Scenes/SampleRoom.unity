@@ -255,7 +255,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 673595419}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e9da76b6c045a0140b73fd6bbf58eb88, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -340,7 +340,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 890030452}
   m_LocalRotation: {x: -0, y: -0, z: -0.8984193, w: 0.43913868}
-  m_LocalPosition: {x: 12.49, y: -2.83, z: 0}
+  m_LocalPosition: {x: 12.42, y: -3.48, z: 0}
   m_LocalScale: {x: 7.6666527, y: 0.7372403, z: 1}
   m_Children: []
   m_Father: {fileID: 1766607511}
@@ -451,6 +451,11 @@ Prefab:
     - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053556344627550, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: runSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
