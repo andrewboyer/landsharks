@@ -215,7 +215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 87.1
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -244,6 +244,11 @@ Prefab:
     - target: {fileID: 1502376036238578, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_Name
       value: Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053556344627550, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: jumpForce
+      value: 650
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
