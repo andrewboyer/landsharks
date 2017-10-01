@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour {
             if (!jumping && Input.GetKeyDown(KeyCode.W))
             {
                 jumping = true;
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * jumpForce);
             }
 
@@ -61,6 +62,7 @@ public class PlayerMovement : MonoBehaviour {
             if (!jumping && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 jumping = true;
+                rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * jumpForce);
             }
 
