@@ -11,13 +11,14 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
     private Collision platformColl;
+    private Animator anim;
     private bool jumping = false;
 
 	// Use this for initialization
 	void Start () {
 
 		rb = GetComponent<Rigidbody2D> ();
-		
+        anim = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         rb.velocity = new Vector2(velo, rb.velocity.y);
+        anim.SetFloat("Velo", velo); // Set speed for animator.
 
         //If the player has jumped and reaches the ground, let the player jump.
         if (jumping && OnGround()) jumping = false;
