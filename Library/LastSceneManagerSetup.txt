@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Carnival.unity
+- path: Assets/Scenes/SampleRoom.unity
   isLoaded: 1
   isActive: 1
