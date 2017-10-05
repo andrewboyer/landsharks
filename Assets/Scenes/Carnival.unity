@@ -830,6 +830,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelo: 100
+--- !u!114 &519548554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519548546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcd6d7941649b2449a5c5b3c279d661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &523624671
 Prefab:
   m_ObjectHideFlags: 0
@@ -1569,6 +1580,21 @@ Prefab:
       propertyPath: jumpForce
       value: 75000
       objectReference: {fileID: 0}
+    - target: {fileID: 114184200787593270, guid: fdbdbf908339b466f841ae76279527bc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50044572280452388, guid: fdbdbf908339b466f841ae76279527bc,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
+    - target: {fileID: 61993772665314950, guid: fdbdbf908339b466f841ae76279527bc,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdbdbf908339b466f841ae76279527bc, type: 2}
   m_IsPrefabParent: 0
@@ -3646,6 +3672,34 @@ GameObject:
   m_PrefabParentObject: {fileID: 1746606489274840, guid: fdbdbf908339b466f841ae76279527bc,
     type: 2}
   m_PrefabInternal: {fileID: 989863281}
+--- !u!114 &1843901237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843901231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcd6d7941649b2449a5c5b3c279d661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1843901238
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843901231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e4034041c2d0bd4889ad0ef9d33366e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1846902634
 Prefab:
   m_ObjectHideFlags: 0
@@ -4440,7 +4494,8 @@ Prefab:
       propertyPath: m_Name
       value: Shadow camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81191138773525318, guid: ad9a2dde479930b4cb97df2eb30b135f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ad9a2dde479930b4cb97df2eb30b135f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2130379029
@@ -4518,6 +4573,16 @@ Prefab:
       propertyPath: m_GravityScale
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 50987982374150214, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
+    - target: {fileID: 61903074093735256, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
   m_IsPrefabParent: 0
