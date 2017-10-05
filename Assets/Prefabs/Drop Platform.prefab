@@ -118,5 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b780fb8417e3d804dbdcba080f615d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  human: {fileID: 0}
-  shadow: {fileID: 0}
+  shadowDrop: 0
+  playerDrop: 0
+  human: {fileID: 1502376036238578, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
+  shadow: {fileID: 1746606489274840, guid: fdbdbf908339b466f841ae76279527bc, type: 2}
