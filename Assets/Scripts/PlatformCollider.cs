@@ -53,6 +53,8 @@ public class PlatformCollider : MonoBehaviour
             else playerDrop = true;
         }
 
+
+
         if (shadowDrop && isShadow)
         {
             // If player drops all the way through platform, stop dropping.
@@ -60,6 +62,7 @@ public class PlatformCollider : MonoBehaviour
             {
                 shadowDrop = false;
             }
+
             Physics2D.IgnoreCollision(coll, playerColl, shadowDrop);
         }
         else if (playerDrop && !isShadow)
@@ -69,6 +72,7 @@ public class PlatformCollider : MonoBehaviour
             {
                 playerDrop = false;
             }
+
             Physics2D.IgnoreCollision(coll, playerColl, playerDrop);
         }            
     }
