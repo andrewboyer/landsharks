@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{58A70FA8-B36D-9BF2-AD5C-F5E0B750FEAE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -51,19 +52,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraF.cs" />
-     <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
-     <Compile Include="Assets\Scripts\PlatformCollider.cs" />
-     <Compile Include="Assets\Scripts\PlayerCollisions.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\TerminalVelocity.cs" />
-     <Compile Include="Assets\Scripts\WallCollision.cs" />
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/natha/Documents/GitHub/landsharks/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\CameraF.cs" />
+    <Compile Include="Assets\Scripts\OrientCart.cs" />
+    <Compile Include="Assets\Scripts\CameraFollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\PlatformCollider.cs" />
+    <Compile Include="Assets\Scripts\PlayerCollisions.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\RotateWheel.cs" />
+    <Compile Include="Assets\Scripts\TerminalVelocity.cs" />
+    <Compile Include="Assets\Scripts\WallCollision.cs" />
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>C:/Users/natha/Documents/GitHub/landsharks/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -73,5 +76,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
