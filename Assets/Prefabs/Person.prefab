@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 50987982374150214}
   - component: {fileID: 114053556344627550}
   - component: {fileID: 95188499721005180}
+  - component: {fileID: 114833310842906728}
+  - component: {fileID: 114593182315950134}
   m_Layer: 0
   m_Name: Person
   m_TagString: Player
@@ -38,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502376036238578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -2.8, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalPosition: {x: 7.2, y: -2.2, z: 1}
+  m_LocalScale: {x: 0.7875, y: 0.8, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,12 +56,12 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1.535081
+  m_UseAutoMass: 0
+  m_Mass: 38.20646
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 9
+  m_Material: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -72,7 +74,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1502376036238578}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 92939f7ae70c6cd40aac23c16b6a2668, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -118,8 +120,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadow: 0
-  runSpeed: 5
-  jumpForce: 750
+  runSpeed: 50
+  jumpForce: 150000
+--- !u!114 &114593182315950134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502376036238578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910f900993f4047b786c59942db53725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGame: {fileID: 0}
+--- !u!114 &114833310842906728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502376036238578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827ea784ef088432e9656db845950097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelo: 100
 --- !u!212 &212848610979832478
 SpriteRenderer:
   m_ObjectHideFlags: 1
