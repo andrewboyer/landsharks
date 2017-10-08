@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlatformCollider : MonoBehaviour
 {
-    public bool shadowDrop = false;
-    public bool playerDrop = false;
     public GameObject human;
     public GameObject shadow;
+    [HideInInspector] public bool shadowDrop = false;
+    [HideInInspector] public bool playerDrop = false;
 
     private Collider2D coll;
 
@@ -37,24 +37,8 @@ public class PlatformCollider : MonoBehaviour
         float platformHeight = coll.bounds.size.y;
         float platformTop = transform.position.y + platformHeight / 2 + 0.01f;
         float platformBot = transform.position.y - platformHeight / 2 - 0.01f;
-
-                
-        // If the player is moving upwards, don't collide
-        if (playerRigidbody.velocity.y > 0.1f)
-        {
-            if (isShadow) shadowDrop = true;
-            else playerDrop = true;
-        }
-
-        // If the player is at the midpoint of the platform
-        if (playerTop > platformTop && platformBot > playerBot)
-        {
-            if (isShadow) shadowDrop = true;
-            else playerDrop = true;
-        }
-
-
-
+        
+        // If the player has asked to drop through the platform, stop dropping.
         if (shadowDrop && isShadow)
         {
             // If player drops all the way through platform, stop dropping.
