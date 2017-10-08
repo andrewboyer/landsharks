@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4161521542926806, guid: e171058d3b3c28d438eba0004fea4723, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e171058d3b3c28d438eba0004fea4723, type: 2}
@@ -199,9 +199,37 @@ Prefab:
       propertyPath: human
       value: 
       objectReference: {fileID: 224210162}
+    - target: {fileID: 61300958851609448, guid: 2f970de128c76a84998bdcdbb842f3e3,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f970de128c76a84998bdcdbb842f3e3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1142541413 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1744483342286798, guid: 2f970de128c76a84998bdcdbb842f3e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 864946470}
+--- !u!251 &1142541414
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1142541413}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 45
+  m_UseSideFriction: 1
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1255178393
 Prefab:
   m_ObjectHideFlags: 0
@@ -239,7 +267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1502376036238578, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
       propertyPath: m_Name
@@ -248,7 +276,35 @@ Prefab:
     - target: {fileID: 114053556344627550, guid: ffa6e4a8996021d49a88476c9e242a54,
         type: 2}
       propertyPath: jumpForce
-      value: 650
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.13150847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841754517727106, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1335959
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987982374150214, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987982374150214, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1.1986588
+      objectReference: {fileID: 0}
+    - target: {fileID: 50987982374150214, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114053556344627550, guid: ffa6e4a8996021d49a88476c9e242a54,
+        type: 2}
+      propertyPath: runSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffa6e4a8996021d49a88476c9e242a54, type: 2}
@@ -379,7 +435,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4700961173993498, guid: 2f970de128c76a84998bdcdbb842f3e3, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114543909916185734, guid: 2f970de128c76a84998bdcdbb842f3e3,
         type: 2}
