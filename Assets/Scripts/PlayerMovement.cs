@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForce;
 
     private Rigidbody2D rb;
-    private Collision platformColl;
     private Animator anim;
     private bool jumping = false;
 
@@ -33,6 +32,7 @@ public class PlayerMovement : MonoBehaviour {
                 velo -= runSpeed;
             if (Input.GetKey(KeyCode.D))
                 velo += runSpeed;
+            
 
         } else {
 
@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour {
 
             if (!jumping && Input.GetKeyDown(KeyCode.W))
             {
-				Debug.Log("Shadow Jump state");
                 jumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * jumpForce);
@@ -74,12 +73,18 @@ public class PlayerMovement : MonoBehaviour {
 
         // Dropping through platforms:
         // TODO: Begin Collisions after the player falls through the platform.
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            && OnGround()
+        if (OnGround()
             && OnGround().collider.gameObject.layer == LayerMask.NameToLayer("Drop Platform"))
         {
             GameObject platform = OnGround().collider.gameObject;
-            platform.GetComponent<PlatformCollider>().drop = true;
+            if (shadow && Input.GetKeyDown(KeyCode.S))
+            {
+                platform.GetComponent<PlatformCollider>().shadowDrop = true;
+            }
+            else if (!shadow && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                platform.GetComponent<PlatformCollider>().playerDrop = true;
+            }
         }
     }
 
@@ -101,5 +106,27 @@ public class PlayerMovement : MonoBehaviour {
 
 		return Physics2D.Linecast (p1, p2);
 	}
+
+    RaycastHit2D OnWall(bool left)
+    {
+        BoxCollider2D coll = GetComponent<BoxCollider2D>();
+        float width = coll.bounds.size.x;
+        float height = coll.bounds.size.y;
+        Vector2 pos = transform.position;
+
+        int bounds = 1;
+        if (left) bounds = -1;
+
+        // The x coordinate of the player's side.
+        float boundX = bounds * (width / 2f + 0.01f);
+
+
+        // Draw a line on the appropriate side of the player.
+        Vector2 p1 = new Vector2(pos.x + boundX, pos.y - height / 2f - 0.02f);
+        Vector2 p2 = new Vector2(pos.x + boundX, pos.y + height / 2f + 0.02f);
+        Debug.DrawLine(new Vector3(p1.x, p1.y, 0), new Vector3(p2.x, p2.y, 0));
+
+        return Physics2D.Linecast(p1, p2);
+    }
 
 }

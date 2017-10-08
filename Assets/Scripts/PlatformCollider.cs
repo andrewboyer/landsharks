@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlatformCollider : MonoBehaviour
 {
-    public bool drop = false;
     public GameObject human;
     public GameObject shadow;
+    [HideInInspector] public bool shadowDrop = false;
+    [HideInInspector] public bool playerDrop = false;
 
     private Collider2D coll;
 
@@ -19,11 +20,11 @@ public class PlatformCollider : MonoBehaviour
     // At the start of every physics frame, check whether the players collide
     private void FixedUpdate()
     {
-        CheckCollisions(human);
-        //CheckCollisions(shadow);        
+        CheckCollisions(human, false);
+        CheckCollisions(shadow, true);
     }
 
-    private void CheckCollisions(GameObject player)
+    private void CheckCollisions(GameObject player, bool isShadow)
     {
         Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
         Collider2D playerColl = player.GetComponent<Collider2D>();
@@ -36,31 +37,27 @@ public class PlatformCollider : MonoBehaviour
         float platformHeight = coll.bounds.size.y;
         float platformTop = transform.position.y + platformHeight / 2 + 0.01f;
         float platformBot = transform.position.y - platformHeight / 2 - 0.01f;
-
-
-                
-        // If the player is moving upwards, don't collide
-        if (playerRigidbody.velocity.y > 0.1f)
-        {
-            drop = true;
-        }
-
-        // If the player is at the midpoint of the platform
-        if (playerTop > platformTop && platformBot > playerBot)
-        {
-            drop = true;
-        }
-
-
-        if (drop)
+        
+        // If the player has asked to drop through the platform, stop dropping.
+        if (shadowDrop && isShadow)
         {
             // If player drops all the way through platform, stop dropping.
-            if (playerTop < platformBot || platformTop < playerBot)
+            if ((playerTop < platformBot || platformTop < playerBot))
             {
-                drop = false;
+                shadowDrop = false;
             }
 
-            Physics2D.IgnoreCollision(coll, playerColl, drop);
+            Physics2D.IgnoreCollision(coll, playerColl, shadowDrop);
         }
+        else if (playerDrop && !isShadow)
+        {
+            // If player drops all the way through platform, stop dropping.
+            if ((playerTop < platformBot || platformTop < playerBot))
+            {
+                playerDrop = false;
+            }
+
+            Physics2D.IgnoreCollision(coll, playerColl, playerDrop);
+        }            
     }
 }
