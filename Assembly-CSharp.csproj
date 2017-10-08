@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\PlatformCollider.cs" />
      <Compile Include="Assets\Scripts\PlayerCollisions.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\TerminalVelocity.cs" />
      <Compile Include="Assets\Scripts\WallCollision.cs" />
      <Compile Include="Assets\Scripts\WhyThis.cs" />
