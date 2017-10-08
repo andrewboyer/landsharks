@@ -9,44 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1593746668113376}
+  m_RootGameObject: {fileID: 1419276317933322}
   m_IsPrefabParent: 1
---- !u!1 &1593746668113376
+--- !u!1 &1419276317933322
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224409206179731550}
-  - component: {fileID: 222304435692512114}
-  - component: {fileID: 114093996164375692}
-  - component: {fileID: 114554963166519140}
+  - component: {fileID: 224001997465093500}
+  - component: {fileID: 222181091089993974}
+  - component: {fileID: 114790091609315828}
+  - component: {fileID: 114693723393196614}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &114093996164375692
+  m_IsActive: 0
+--- !u!114 &114693723393196614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593746668113376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2336937050d88476eab636934c2cbe07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tim: 0
---- !u!114 &114554963166519140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593746668113376}
+  m_GameObject: {fileID: 1419276317933322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -66,26 +54,38 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 136
+    m_MaxSize: 144
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
---- !u!222 &222304435692512114
+  m_Text: THE GAME IS OVER AND i ST0LE YOUR CREDIT CARD lNFO
+--- !u!114 &114790091609315828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419276317933322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2336937050d88476eab636934c2cbe07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tim: 0
+--- !u!222 &222181091089993974
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593746668113376}
---- !u!224 &224409206179731550
+  m_GameObject: {fileID: 1419276317933322}
+--- !u!224 &224001997465093500
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593746668113376}
+  m_GameObject: {fileID: 1419276317933322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
