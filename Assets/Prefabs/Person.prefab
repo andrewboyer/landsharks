@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502376036238578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.2, y: -2.2, z: 1}
+  m_LocalPosition: {x: 5.03, y: -3.23, z: 1}
   m_LocalScale: {x: 0.7875, y: 0.8, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 38.20646
+  m_Mass: 38
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 9
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910f900993f4047b786c59942db53725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGame: {fileID: 0}
+  endGame: {fileID: 1746606489274840, guid: fdbdbf908339b466f841ae76279527bc, type: 2}
 --- !u!114 &114833310842906728
 MonoBehaviour:
   m_ObjectHideFlags: 1
