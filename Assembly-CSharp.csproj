@@ -66,14 +66,22 @@
      <Compile Include="Assets\Scripts\ClickButton.cs" />
      <Compile Include="Assets\Scripts\Controller2D.cs" />
      <Compile Include="Assets\Scripts\CountdownTimer.cs" />
+     <Compile Include="Assets\Scripts\Magician.cs" />
      <Compile Include="Assets\Scripts\PlatformController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Raycast.cs" />
+     <Compile Include="Assets\Scripts\Shadow.cs" />
      <None Include="Assets\menu Ui\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\menu Ui\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\menu Ui\material\UI-Default-No-Alpha.shader" />
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>/Users/AB/Documents/Projects/landsharks/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
@@ -81,29 +89,14 @@
  <Reference Include="nunit.framework">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.Timeline">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity">
- <HintPath>/Users/Laura/Desktop/landsharks/Library/FacebookSDK/Facebook.Unity.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity.Arcade">
- <HintPath>/Users/Laura/Desktop/landsharks/Library/FacebookSDK/Facebook.Unity.Arcade.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>/Users/Laura/Desktop/landsharks/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
- <Reference Include="FacebookNamedPipeClient">
- <HintPath>/Users/Laura/Desktop/landsharks/Library/FacebookSDK/FacebookNamedPipeClient.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

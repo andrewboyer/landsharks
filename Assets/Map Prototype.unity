@@ -635,6 +635,7 @@ GameObject:
   - component: {fileID: 105192869}
   - component: {fileID: 105192868}
   - component: {fileID: 105192874}
+  - component: {fileID: 105192875}
   m_Layer: 8
   m_Name: Person
   m_TagString: Player
@@ -673,7 +674,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105192867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4235ec4132ddeae4fb1a9e20753dbb44, type: 3}
   m_Name: 
@@ -778,6 +779,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &105192875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105192867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bcb76bbd56c41d9acfb633bdeb1e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 4.5
+  timetoJumpApex: 0.55
+  isShadow: 0
+  moveSpeed: 6
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.1
+  shadow: {fileID: 368950230}
+  timerObj: {fileID: 1849193458}
 --- !u!1001 &205241260
 Prefab:
   m_ObjectHideFlags: 0
@@ -1128,9 +1149,10 @@ GameObject:
   - component: {fileID: 368950235}
   - component: {fileID: 368950234}
   - component: {fileID: 368950233}
-  - component: {fileID: 368950232}
+  - component: {fileID: 368950238}
   - component: {fileID: 368950231}
   - component: {fileID: 368950237}
+  - component: {fileID: 368950232}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Player
@@ -1171,12 +1193,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 368950230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4235ec4132ddeae4fb1a9e20753dbb44, type: 3}
+  m_Script: {fileID: 11500000, guid: 0079e12bde6c148a98dc89394716b8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 1
+  moveSpeed: 10
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.1
   shadow: {fileID: 368950230}
   timerObj: {fileID: 1849193458}
 --- !u!114 &368950233
@@ -1274,6 +1300,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &368950238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 368950230}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4235ec4132ddeae4fb1a9e20753dbb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 4.5
+  timetoJumpApex: 0.55
+  isShadow: 1
+  shadow: {fileID: 368950230}
+  timerObj: {fileID: 1849193458}
 --- !u!1 &372466822
 GameObject:
   m_ObjectHideFlags: 0
