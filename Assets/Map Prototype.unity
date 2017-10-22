@@ -793,7 +793,7 @@ MonoBehaviour:
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 0
-  moveSpeed: 6
+  moveSpeed: 10
   jumpVelocity: 0
   accelerationTimeAirborn: 0.2
   accelerationTimeGrounded: 0.1
