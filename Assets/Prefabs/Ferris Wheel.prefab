@@ -73,6 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4309777060078640}
+  - component: {fileID: 114565806035483754}
   m_Layer: 0
   m_Name: Ferris Wheel
   m_TagString: Untagged
@@ -335,3 +336,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114565806035483754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907100131881230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18b9944096c5794892786e7101fb805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
