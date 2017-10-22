@@ -62,6 +62,7 @@
      <Compile Include="Assets\menu Ui\scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\menu Ui\scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\menu Ui\scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Scripts\Animations.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ClickButton.cs" />
      <Compile Include="Assets\Scripts\Controller2D.cs" />

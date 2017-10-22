@@ -21,3 +21,4 @@
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Facebook.Unity.Settings.dll
