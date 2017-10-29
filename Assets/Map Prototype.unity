@@ -697,7 +697,6 @@ GameObject:
   - component: {fileID: 105192869}
   - component: {fileID: 105192868}
   - component: {fileID: 105192874}
-  - component: {fileID: 105192875}
   m_Layer: 8
   m_Name: Person
   m_TagString: Player
@@ -736,7 +735,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105192867}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4235ec4132ddeae4fb1a9e20753dbb44, type: 3}
   m_Name: 
@@ -744,6 +743,11 @@ MonoBehaviour:
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 0
+  moveSpeed: 10
+  gravity: 0
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.4
   shadow: {fileID: 368950230}
   timerObj: {fileID: 1849193458}
 --- !u!114 &105192870
@@ -841,26 +845,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &105192875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105192867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1bcb76bbd56c41d9acfb633bdeb1e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 4.5
-  timetoJumpApex: 0.55
-  isShadow: 0
-  moveSpeed: 10
-  jumpVelocity: 0
-  accelerationTimeAirborn: 0.2
-  accelerationTimeGrounded: 0.1
-  shadow: {fileID: 368950230}
-  timerObj: {fileID: 1849193458}
 --- !u!1 &212672391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1289,6 @@ GameObject:
   - component: {fileID: 368950238}
   - component: {fileID: 368950231}
   - component: {fileID: 368950237}
-  - component: {fileID: 368950232}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Player
@@ -1338,26 +1321,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &368950232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 368950230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0079e12bde6c148a98dc89394716b8e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 4.5
-  timetoJumpApex: 0.55
-  isShadow: 1
-  moveSpeed: 10
-  jumpVelocity: 0
-  accelerationTimeAirborn: 0.2
-  accelerationTimeGrounded: 0.1
-  shadow: {fileID: 368950230}
-  timerObj: {fileID: 1849193458}
 --- !u!114 &368950233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,7 +1422,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368950230}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4235ec4132ddeae4fb1a9e20753dbb44, type: 3}
   m_Name: 
@@ -1467,6 +1430,11 @@ MonoBehaviour:
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 1
+  moveSpeed: 8
+  gravity: 0
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0
+  accelerationTimeGrounded: 0
   shadow: {fileID: 368950230}
   timerObj: {fileID: 1849193458}
 --- !u!1 &372466822
@@ -1796,6 +1764,8 @@ GameObject:
   m_Component:
   - component: {fileID: 445692344}
   - component: {fileID: 445692345}
+  - component: {fileID: 445692347}
+  - component: {fileID: 445692346}
   m_Layer: 0
   m_Name: buisness shadow
   m_TagString: Untagged
@@ -1858,6 +1828,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &445692346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445692343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0635e2bcb8bdd4e5a815d90c395470e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShadow: 1
+--- !u!95 &445692347
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445692343}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 545af5e8a0a9146e7bc660503966a77f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &447591143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,7 +2013,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 459413086}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 27.63, y: -0.66, z: 0}
+  m_LocalPosition: {x: 27.63, y: -0.6411, z: 0}
   m_LocalScale: {x: 9.831112, y: 0.9963499, z: 1}
   m_Children: []
   m_Father: {fileID: 574684341}
@@ -7492,6 +7491,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1637580522}
   - component: {fileID: 1637580523}
+  - component: {fileID: 1637580525}
+  - component: {fileID: 1637580524}
   m_Layer: 0
   m_Name: person
   m_TagString: Untagged
@@ -7554,6 +7555,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1637580524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637580521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0635e2bcb8bdd4e5a815d90c395470e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShadow: 0
+--- !u!95 &1637580525
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637580521}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e06906b5ab2934738a847c0d9dda7abf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1670726627
 GameObject:
   m_ObjectHideFlags: 0
