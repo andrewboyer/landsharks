@@ -9,12 +9,12 @@ public class Player : MonoBehaviour {
 
     public bool isShadow;
 
-    float moveSpeed = 6;
-    float gravity;
-    float jumpVelocity;
+    public float moveSpeed = 6;
+	public float gravity;
+	public float jumpVelocity;
 
-    float accelerationTimeAirborn=0.2f;
-    float accelerationTimeGrounded=0.1f;
+	public float accelerationTimeAirborn=0.2f;
+	public float accelerationTimeGrounded=0.1f;
     float xSmooth;
 
     public GameObject shadow;
