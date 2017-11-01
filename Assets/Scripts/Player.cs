@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
     public float jumpHeight = 4;
     public float timetoJumpApex = 0.4f;
+	public float multiplier = 1;
+	public float multiplierDuration = 0f;
 
     public bool isShadow;
 
@@ -42,11 +44,13 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isShadow && other.gameObject == shadow)
-        {
-            timer.gameOverText.text = "Person Wins!";
-            timer.timerEnded();
-        }
+		if (!isShadow && other.gameObject == shadow) {
+			timer.gameOverText.text = "Person Wins!";
+			timer.timerEnded ();
+		} else if (other.gameObject.tag == "MysteryBox") {
+			multiplier = Random.Range (0.5f, 1.5f);
+			multiplierDuration = 10f;
+		}
     }
 
     // Update is called once per frame
@@ -77,7 +81,7 @@ public class Player : MonoBehaviour {
 
         }
 
-        float targetVelocityX = input.x * moveSpeed;
+		float targetVelocityX = input.x * (moveSpeed * multiplier);
 
         if (!controller.collisions.below && velocity.y < -15)
         {
