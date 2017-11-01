@@ -375,6 +375,11 @@ MonoBehaviour:
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 1
+  moveSpeed: 6
+  gravity: 0
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.1
   shadow: {fileID: 1226165732965938}
   timerObj: {fileID: 0}
 --- !u!114 &114821827644288780
@@ -391,6 +396,11 @@ MonoBehaviour:
   jumpHeight: 4.5
   timetoJumpApex: 0.55
   isShadow: 0
+  moveSpeed: 6
+  gravity: 0
+  jumpVelocity: 0
+  accelerationTimeAirborn: 0.2
+  accelerationTimeGrounded: 0.1
   shadow: {fileID: 1226165732965938}
   timerObj: {fileID: 0}
 --- !u!212 &212221843358532296
