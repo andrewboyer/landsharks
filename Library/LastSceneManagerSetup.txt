@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Map Prototype.unity
+- path: Assets/Scenes/Map Prototype.unity
   isLoaded: 1
   isActive: 1
