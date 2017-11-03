@@ -15,14 +15,17 @@ public class Player : MonoBehaviour {
 	public float gravity;
 	public float jumpVelocity;
 
-	public float accelerationTimeAirborn=0.2f;
-	public float accelerationTimeGrounded=0.1f;
+    public float accelerationTimeStopping = 0.1f;
+	public float accelerationTimeAirborn = 0.2f;
+	public float accelerationTimeGrounded = 0.4f;
     float xSmooth;
 
     public GameObject shadow;
     public GameObject timerObj;
 
     private CountdownTimer timer;
+
+    protected float moveThreshold = 0.2f;
 
     Vector3 velocity;
 
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour {
 
         gravity = -(2 * jumpHeight) / Mathf.Pow(timetoJumpApex, 2);
         jumpVelocity = Mathf.Abs(gravity * timetoJumpApex);
-        print("Gravity: " + gravity + "  JumpSpeed: " + jumpHeight);
+        Debug.Log("Gravity: " +  gravity + "  JumpSpeed: " + jumpHeight);
 
         
     }
@@ -56,7 +59,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        Vector2 input;
+        Vector2 input = new Vector2(0, 0);
 
         if (controller.collisions.above || controller.collisions.below)
         {
@@ -91,8 +94,20 @@ public class Player : MonoBehaviour {
         {
             velocity.y += gravity * Time.deltaTime;
         }
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref xSmooth, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborn);
+        if (input.x == 0)
+            SetVelo(targetVelocityX, accelerationTimeStopping);
+        else if (controller.collisions.below)
+            SetVelo(targetVelocityX, accelerationTimeGrounded);
+        else
+            SetVelo(targetVelocityX, accelerationTimeAirborn);
+
+
         controller.Move(velocity * Time.deltaTime);
 
+    }
+
+    void SetVelo(float target, float accel)
+    {
+        velocity.x = Mathf.SmoothDamp(velocity.x, target, ref xSmooth, accel);
     }
 }

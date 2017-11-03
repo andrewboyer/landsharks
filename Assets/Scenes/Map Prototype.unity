@@ -748,6 +748,7 @@ MonoBehaviour:
   moveSpeed: 10
   gravity: 0
   jumpVelocity: 0
+  accelerationTimeStopping: 0.1
   accelerationTimeAirborn: 0.2
   accelerationTimeGrounded: 0.4
   shadow: {fileID: 368950230}
@@ -1437,6 +1438,7 @@ MonoBehaviour:
   moveSpeed: 8
   gravity: 0
   jumpVelocity: 0
+  accelerationTimeStopping: 0
   accelerationTimeAirborn: 0
   accelerationTimeGrounded: 0
   shadow: {fileID: 368950230}
@@ -5806,8 +5808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc5d5f00fe034a6c9f17223e8ddb317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 0
-  player: {fileID: 0}
 --- !u!4 &1325306328
 Transform:
   m_ObjectHideFlags: 0
