@@ -74,14 +74,22 @@ public class Player : MonoBehaviour {
             input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow)&& controller.collisions.below && isShadow)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below && isShadow)
         {
             velocity.y = jumpVelocity;
-        
-        } else if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow) && isShadow)
         {
-            velocity.y = jumpVelocity;
+            velocity.y *= 0.5f;
+        }
 
+        if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
+        {
+            velocity.y = jumpVelocity;
+        }
+        else if (Input.GetKeyUp(KeyCode.W) && !isShadow)
+        {
+            velocity.y *= 0.5f;
         }
 
 		float targetVelocityX = input.x * (moveSpeed * multiplier);
