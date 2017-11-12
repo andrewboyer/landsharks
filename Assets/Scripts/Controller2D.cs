@@ -110,17 +110,19 @@ public class Controller2D : Raycast {
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
             if (hit && !(directionY == 1 && hit.collider.tag == "Fall") && !(hit.collider.tag == "Fall" && ((collider.gameObject.GetComponent<Player>().isShadow && Input.GetKey(KeyCode.DownArrow))||(!collider.gameObject.GetComponent<Player>().isShadow && Input.GetKey(KeyCode.S)))) && !(innerBounds.Intersects(hit.collider.bounds) && hit.collider.tag == "Fall"))
             {
-                
-                velocity.y = (hit.distance - skinwidth)*directionY;
-                rayLength = hit.distance;
-
-                if (collisions.climbingSlope)
+                if (!hit.collider.isTrigger)
                 {
-                    velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
-                }
+                    velocity.y = (hit.distance - skinwidth) * directionY;
+                    rayLength = hit.distance;
 
-                collisions.below = directionY == -1;
-                collisions.above = directionY == 1;
+                    if (collisions.climbingSlope)
+                    {
+                        velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
+                    }
+
+                    collisions.below = directionY == -1;
+                    collisions.above = directionY == 1;
+                }
             }
         }
         if (collisions.climbingSlope)
