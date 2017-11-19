@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Animations.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/Scripts/Animations.cs" Line="40" Column="37" />
       <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets/Scripts/Player.cs" Line="17" Column="9" />
+      <File FileName="Assets/Scripts/Animations.cs" Line="1" Column="1" />
+>>>>>>> fcbbe38cde3608ee677b58fca650db85f59a9f4b
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

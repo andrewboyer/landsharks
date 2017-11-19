@@ -68,10 +68,12 @@
      <Compile Include="Assets\Scripts\Controller2D.cs" />
      <Compile Include="Assets\Scripts\CountdownTimer.cs" />
      <Compile Include="Assets\Scripts\Magician.cs" />
+     <Compile Include="Assets\Scripts\MysteryBox.cs" />
      <Compile Include="Assets\Scripts\PlatformController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Raycast.cs" />
      <Compile Include="Assets\Scripts\Shadow.cs" />
+     <Compile Include="Assets\Scripts\ShadowIndicator.cs" />
      <None Include="Assets\menu Ui\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\menu Ui\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\menu Ui\material\UI-Default-No-Alpha.shader" />

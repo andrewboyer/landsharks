@@ -6,21 +6,26 @@ public class Player : MonoBehaviour {
 
     public float jumpHeight = 4;
     public float timetoJumpApex = 0.4f;
+	public float multiplier = 1;
+	public float multiplierDuration = 0f;
 
     public bool isShadow;
 
-    float moveSpeed = 6;
-    float gravity;
-    float jumpVelocity;
+    public float moveSpeed = 6;
+	public float gravity;
+	public float jumpVelocity;
 
-    float accelerationTimeAirborn=0.2f;
-    float accelerationTimeGrounded=0.1f;
+    public float accelerationTimeStopping = 0.1f;
+	public float accelerationTimeAirborn = 0.2f;
+	public float accelerationTimeGrounded = 0.4f;
     float xSmooth;
 
     public GameObject shadow;
     public GameObject timerObj;
 
     private CountdownTimer timer;
+
+    protected float moveThreshold = 0.2f;
 
     Vector3 velocity;
 
@@ -35,24 +40,26 @@ public class Player : MonoBehaviour {
 
         gravity = -(2 * jumpHeight) / Mathf.Pow(timetoJumpApex, 2);
         jumpVelocity = Mathf.Abs(gravity * timetoJumpApex);
-        print("Gravity: " + gravity + "  JumpSpeed: " + jumpHeight);
+        Debug.Log("Gravity: " +  gravity + "  JumpSpeed: " + jumpHeight);
 
         
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isShadow && other.gameObject == shadow)
-        {
-            timer.gameOverText.text = "Person Wins!";
-            timer.timerEnded();
-        }
+		if (!isShadow && other.gameObject == shadow) {
+			timer.gameOverText.text = "Person Wins!";
+			timer.timerEnded ();
+		} else if (other.gameObject.tag == "MysteryBox") {
+			multiplier = Random.Range (0.5f, 1.5f);
+			multiplierDuration = 10f;
+		}
     }
 
     // Update is called once per frame
     void Update () {
 
-        Vector2 input;
+        Vector2 input = new Vector2(0, 0);
 
         if (controller.collisions.above || controller.collisions.below)
         {
@@ -67,17 +74,25 @@ public class Player : MonoBehaviour {
             input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow)&& controller.collisions.below && isShadow)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below && isShadow)
         {
             velocity.y = jumpVelocity;
-        
-        } else if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow) && isShadow)
         {
-            velocity.y = jumpVelocity;
-
+            velocity.y *= 0.5f;
         }
 
-        float targetVelocityX = input.x * moveSpeed;
+        if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
+        {
+            velocity.y = jumpVelocity;
+        }
+        else if (Input.GetKeyUp(KeyCode.W) && !isShadow)
+        {
+            velocity.y *= 0.5f;
+        }
+
+		float targetVelocityX = input.x * (moveSpeed * multiplier);
 
         if (!controller.collisions.below && velocity.y < -15)
         {
@@ -87,8 +102,20 @@ public class Player : MonoBehaviour {
         {
             velocity.y += gravity * Time.deltaTime;
         }
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref xSmooth, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborn);
+        if (input.x == 0)
+            SetVelo(targetVelocityX, accelerationTimeStopping);
+        else if (controller.collisions.below)
+            SetVelo(targetVelocityX, accelerationTimeGrounded);
+        else
+            SetVelo(targetVelocityX, accelerationTimeAirborn);
+
+
         controller.Move(velocity * Time.deltaTime);
 
+    }
+
+    void SetVelo(float target, float accel)
+    {
+        velocity.x = Mathf.SmoothDamp(velocity.x, target, ref xSmooth, accel);
     }
 }

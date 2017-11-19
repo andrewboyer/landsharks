@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Carnival Map.unity
+=======
+- path: Assets/Scenes/Map Prototype.unity
+>>>>>>> fcbbe38cde3608ee677b58fca650db85f59a9f4b
   isLoaded: 1
   isActive: 1
