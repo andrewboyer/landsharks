@@ -51,9 +51,6 @@ public class Player : MonoBehaviour {
 		if (!isShadow && other.gameObject == shadow) {
 			timer.gameOverText.text = "Person Wins!";
 			timer.timerEnded ();
-		} else if (other.gameObject.tag == "MysteryBox") {
-			multiplier = Random.Range (0.5f, 1.5f);
-			multiplierDuration = 10f;
 		}
         if(other.gameObject == ground)
         {

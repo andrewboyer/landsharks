@@ -22,3 +22,10 @@
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Mono.Cecil.Mdb.dll
 /Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Facebook.Unity.Settings.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/UnityEngine.UIAutomation.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/UnityEngine.GoogleAudioSpatializer.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/UnityEngine.SpatialTracking.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/UnityEngine.Purchasing.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Unity.Cecil.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Unity.Cecil.Pdb.dll
+/Users/matthewbofenkamp/landsharks/Temp/bin/Debug/Unity.Cecil.Mdb.dll
