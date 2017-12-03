@@ -52,10 +52,6 @@ public class Player : MonoBehaviour {
 			timer.gameOverText.text = "Person Wins!";
 			timer.timerEnded ();
 		}
-        if(other.gameObject == ground)
-        {
-            dustCloud.Play ();
-        }
     }
 
     // Update is called once per frame
