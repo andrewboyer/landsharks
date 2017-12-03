@@ -583,13 +583,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 71831964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-=======
   m_LocalPosition: {x: 448, y: 243, z: 0}
   m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
->>>>>>> 1cfefb83a7ee06f9976868a93b2301fa0baf094c
   m_Children:
   - {fileID: 1559590161}
   - {fileID: 1489219099}
@@ -2656,11 +2651,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 574106214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: -960.7186, y: 0.000015258789, z: 0}
-=======
-  m_LocalPosition: {x: -0.000091552734, y: 0.000091552734, z: 0}
->>>>>>> 1cfefb83a7ee06f9976868a93b2301fa0baf094c
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1411048707}
@@ -7171,20 +7162,12 @@ Prefab:
     - target: {fileID: 224169114137818150, guid: 79d71e3f29b2b4047a9d76b217ab40b7,
         type: 2}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 321.90326
-=======
-      value: 129.90326
->>>>>>> 1cfefb83a7ee06f9976868a93b2301fa0baf094c
       objectReference: {fileID: 0}
     - target: {fileID: 224169114137818150, guid: 79d71e3f29b2b4047a9d76b217ab40b7,
         type: 2}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: 233.31377
-=======
-      value: 76.31377
->>>>>>> 1cfefb83a7ee06f9976868a93b2301fa0baf094c
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79d71e3f29b2b4047a9d76b217ab40b7, type: 2}
@@ -8628,11 +8611,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812400946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: -960.7185, y: 0, z: 0}
-=======
-  m_LocalPosition: {x: -0.000091552734, y: 0.000091552734, z: 0}
->>>>>>> 1cfefb83a7ee06f9976868a93b2301fa0baf094c
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1411048707}
