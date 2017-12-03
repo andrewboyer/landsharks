@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fall
+  - MysteryBox
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Drop Platform
-  - 
-  - 
+  - Player
+  - Obstacles
+  - Fall Thru
   - 
   - 
   - 
@@ -38,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Behind
+    uniqueID: 2244419173
+    locked: 0
+  - name: Player
+    uniqueID: 2940992037
+    locked: 0
+  - name: Above
+    uniqueID: 2483227647
+    locked: 0
+  - name: Quads
+    uniqueID: 598869703
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
