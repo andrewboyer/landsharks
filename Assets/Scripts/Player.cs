@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     public float timetoJumpApex = 0.4f;
 	public float multiplier = 1;
 	public float multiplierDuration = 0f;
-
+    
     public bool isShadow;
 
     public float moveSpeed = 6;
@@ -22,9 +22,10 @@ public class Player : MonoBehaviour {
 
     public GameObject shadow;
     public GameObject timerObj;
-
+    public ParticleSystem dustCloud;
+    public GameObject ground;
     private CountdownTimer timer;
-
+    private bool hasHitGround;
     protected float moveThreshold = 0.2f;
 
     Vector3 velocity;
@@ -51,6 +52,10 @@ public class Player : MonoBehaviour {
 			timer.gameOverText.text = "Person Wins!";
 			timer.timerEnded ();
 		}
+        if(other.gameObject == ground)
+        {
+            dustCloud.Play ();
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +67,15 @@ public class Player : MonoBehaviour {
         {
             velocity.y = 0;
         }
-        
+        if (controller.collisions.below && !hasHitGround)
+        {
+            hasHitGround = true;
+            dustCloud.Play();
+        }
+        if (!controller.collisions.below)
+        {
+            hasHitGround = false;
+        }
         if (isShadow)
         {
             input = new Vector2(Input.GetAxisRaw("Horizontalarrow"), Input.GetAxisRaw("Verticalarrow"));
