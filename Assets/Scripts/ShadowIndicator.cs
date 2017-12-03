@@ -61,7 +61,7 @@ public class ShadowIndicator : MonoBehaviour {
 			if (angle < 0)
 				angle += (2f * Mathf.PI);
 			Debug.Log (angle);
-			indicator.transform.eulerAngles = Vector3.forward * (angle * Mathf.Rad2Deg - 90f);
+			indicator.transform.eulerAngles = Vector3.forward * (angle * Mathf.Rad2Deg);
 
 			float px = playerPos.x;
 			float py = playerPos.y;
@@ -95,7 +95,7 @@ public class ShadowIndicator : MonoBehaviour {
 
 			}
 
-			indicator.transform.position = new Vector2 (x, y);
+			indicator.transform.position = new Vector3 (x, y, -1.9f);
 
 		}
 
