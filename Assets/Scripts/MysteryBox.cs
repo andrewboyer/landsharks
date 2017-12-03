@@ -7,9 +7,12 @@ public class MysteryBox : MonoBehaviour {
 	public float timer = 1.0f;
 	public bool alive = true;
 
+    private ParticleSystem particle;
+    private float particleScale;
+
 	// Use this for initialization
 	void Start () {
-		
+        particle = GetComponentInChildren<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +28,7 @@ public class MysteryBox : MonoBehaviour {
 			alive = false;
 			GetComponent<BoxCollider2D> ().enabled = false;
 			GetComponent<SpriteRenderer> ().enabled = false;
+            particle.Stop();
 			StartCoroutine(EnableBox(timer));
 		}
 	}
@@ -33,6 +37,7 @@ public class MysteryBox : MonoBehaviour {
 		yield return new WaitForSeconds(waitTime);
 		GetComponent<BoxCollider2D> ().enabled = true;
 		GetComponent<SpriteRenderer> ().enabled = true;
+        particle.Play();
 		alive = true;
 	}
 

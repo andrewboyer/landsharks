@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fall
   - MysteryBox
+  - Slow
+  - Fast
   layers:
   - Default
   - TransparentFX
