@@ -18,6 +18,8 @@ public class ShadowIndicator : MonoBehaviour {
 	private float q3;
 	private float q4;
 
+	public float offset;
+
 	// Use this for initialization
 	void Start () {
 
@@ -61,7 +63,7 @@ public class ShadowIndicator : MonoBehaviour {
 			if (angle < 0)
 				angle += (2f * Mathf.PI);
 			Debug.Log (angle);
-			indicator.transform.eulerAngles = Vector3.forward * (angle * Mathf.Rad2Deg);
+			indicator.transform.eulerAngles = Vector3.forward * (angle * Mathf.Rad2Deg + offset);
 
 			float px = playerPos.x;
 			float py = playerPos.y;
