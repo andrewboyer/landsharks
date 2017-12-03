@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\CountdownTimer.cs" />
      <Compile Include="Assets\Scripts\Magician.cs" />
      <Compile Include="Assets\Scripts\MysteryBox.cs" />
+     <Compile Include="Assets\Scripts\MysteryBoxEffect.cs" />
      <Compile Include="Assets\Scripts\PlatformController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Raycast.cs" />
