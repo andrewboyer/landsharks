@@ -23,8 +23,24 @@ public class Animations : MonoBehaviour {
 		bool moving;
 
 		if (isShadow) {
-			moveLeft = Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow);
-			moveRight = Input.GetKey (KeyCode.RightArrow) && !Input.GetKey (KeyCode.LeftArrow);
+
+            if (Input.GetAxis("LeftJoystickX") < 0 
+                || (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))){
+                moveLeft = true;
+                moveRight = false;
+            } else if(Input.GetAxis("LeftJoystickX") > 0 
+                || (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))){
+                moveLeft = false;
+                moveRight = true;
+            } else
+            {
+                moveLeft = false;
+                moveRight = false;
+            }
+
+            //moveLeft = Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow);
+			//moveRight = Input.GetKey (KeyCode.RightArrow) && !Input.GetKey (KeyCode.LeftArrow);
+
 		} else {
 			moveLeft = Input.GetKey (KeyCode.A) && !Input.GetKey (KeyCode.D);
 			moveRight = Input.GetKey (KeyCode.D) && !Input.GetKey (KeyCode.A);

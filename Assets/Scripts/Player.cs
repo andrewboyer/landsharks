@@ -67,31 +67,55 @@ public class Player : MonoBehaviour {
         {
             velocity.y = 0;
         }
+
         if (controller.collisions.below && !hasHitGround)
         {
             hasHitGround = true;
             dustCloud.Play();
         }
+
         if (!controller.collisions.below)
         {
             hasHitGround = false;
         }
+
+        // horizontal movement inputs for shadow and magician
         if (isShadow)
         {
-            input = new Vector2(Input.GetAxisRaw("Horizontalarrow"), Input.GetAxisRaw("Verticalarrow"));
-        } else
-        {
-            input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
+            if(Input.GetAxis("LeftJoystickX") != 0 )
+            {
+                input = new Vector2(Input.GetAxis("LeftJoystickX"), Input.GetAxis("LeftJoystickY"));
+            }
+            if (Input.GetAxisRaw("Horizontalarrow") != 0)
+            {
+                input = new Vector2(Input.GetAxisRaw("Horizontalarrow"), Input.GetAxisRaw("Verticalarrow"));
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below && isShadow)
+        // shadow jumping movement inputs
+        if (
+            Input.GetButtonDown("A")  // controller input
+            && controller.collisions.below && isShadow)
+        {
+            velocity.y = jumpVelocity;
+        } else if (
+            Input.GetKeyDown(KeyCode.UpArrow) //keyboard input
+            && controller.collisions.below && isShadow)
         {
             velocity.y = jumpVelocity;
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow) && isShadow)
+        else if (
+            //Input.GetKeyUp(KeyCode.UpArrow) 
+            Input.GetButtonDown("A")
+            && isShadow)
         {
             velocity.y *= 0.5f;
-        }
+        } else if (
+           Input.GetKeyUp(KeyCode.UpArrow) 
+           && isShadow)
+            {
+                velocity.y *= 0.5f;
+            }
 
         if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
         {
