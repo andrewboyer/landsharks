@@ -86,6 +86,9 @@ public class Player : MonoBehaviour {
             {
                 input = new Vector2(Input.GetAxisRaw("Horizontalarrow"), Input.GetAxisRaw("Verticalarrow"));
             }
+        } else
+        {
+            input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
         }
 
         // shadow jumping movement inputs
