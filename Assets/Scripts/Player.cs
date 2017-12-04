@@ -88,7 +88,14 @@ public class Player : MonoBehaviour {
             }
         } else
         {
-            input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
+            if (Input.GetAxis("LeftJoystickX_P2") != 0)
+            {
+                input = new Vector2(Input.GetAxis("LeftJoystickX_P2"), Input.GetAxis("LeftJoystickY_P2"));
+            }
+            if (Input.GetAxisRaw("Horizontalwasd") != 0)
+            {
+                input = new Vector2(Input.GetAxisRaw("Horizontalwasd"), Input.GetAxisRaw("Verticalwasd"));
+            }
         }
 
         // shadow jumping movement inputs
@@ -103,8 +110,7 @@ public class Player : MonoBehaviour {
         {
             velocity.y = jumpVelocity;
         }
-        else if (
-            //Input.GetKeyUp(KeyCode.UpArrow) 
+        else if ( 
             Input.GetButtonDown("A")
             && isShadow)
         {
@@ -116,6 +122,15 @@ public class Player : MonoBehaviour {
                 velocity.y *= 0.5f;
             }
 
+        if (Input.GetButtonDown("A_P2") && controller.collisions.below && !isShadow)
+        {
+            velocity.y = jumpVelocity;
+        }
+        else if (Input.GetButtonDown("A_P2") && !isShadow)
+        {
+            velocity.y *= 0.5f;
+        }
+
         if (Input.GetKeyDown(KeyCode.W) && controller.collisions.below && !isShadow)
         {
             velocity.y = jumpVelocity;
@@ -125,7 +140,7 @@ public class Player : MonoBehaviour {
             velocity.y *= 0.5f;
         }
 
-		float targetVelocityX = input.x * (moveSpeed * multiplier);
+        float targetVelocityX = input.x * (moveSpeed * multiplier);
 
         if (!controller.collisions.below && velocity.y < -15)
         {
