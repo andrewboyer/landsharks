@@ -108,7 +108,7 @@ public class Controller2D : Raycast {
             Vector2 rayOrigin = (directionY == -1) ? raycastOrigins.bottomLeft : raycastOrigins.topLeft;
             rayOrigin += Vector2.right * (verticalRaySpacing * i + velocity.x);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
-            if (hit && !(directionY == 1 && hit.collider.tag == "Fall") && !(hit.collider.tag == "Fall" && ((collider.gameObject.GetComponent<Player>().isShadow && Input.GetKey(KeyCode.DownArrow))||(!collider.gameObject.GetComponent<Player>().isShadow && Input.GetKey(KeyCode.S)))) && !(innerBounds.Intersects(hit.collider.bounds) && hit.collider.tag == "Fall"))
+            if (hit && !(directionY == 1 && hit.collider.tag == "Fall") && !(hit.collider.tag == "Fall" && ((collider.gameObject.GetComponent<Player>().isShadow && (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftJoystickY") > 0)) || (!collider.gameObject.GetComponent<Player>().isShadow && (Input.GetKey(KeyCode.S) || Input.GetAxis("LeftJoystickY_P2") > 0) ))) && !(innerBounds.Intersects(hit.collider.bounds) && hit.collider.tag == "Fall"))
             {
                 if (!hit.collider.isTrigger)
                 {
