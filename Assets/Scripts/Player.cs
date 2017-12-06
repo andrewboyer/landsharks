@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
     public GameObject dustCloud;
     public GameObject ground;
     private CountdownTimer timer;
+    private float dustCloudModifier;
     private bool hasHitGround;
     protected float moveThreshold = 0.2f;
 
@@ -67,9 +68,18 @@ public class Player : MonoBehaviour {
 
         if (controller.collisions.below && !hasHitGround)
         {
+            if (isShadow)
+            {
+                dustCloudModifier = 1.0f;
+            } else
+            {
+                dustCloudModifier = .5f;
+            }
             hasHitGround = true;
             // instantiate a new dustcloud gameobject at the position of the current game object
-            GameObject b = Instantiate(dustCloud, transform.position , transform.rotation);  
+            Vector3 newPos = new Vector3(transform.position.x, transform.position.y - dustCloudModifier, transform.position.z);
+            //GameObject b = Instantiate(dustCloud, transform.position , transform.rotation);
+            GameObject b = Instantiate(dustCloud, newPos, transform.rotation);
         }
 
         if (!controller.collisions.below)
