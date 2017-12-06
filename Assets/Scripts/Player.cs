@@ -22,7 +22,8 @@ public class Player : MonoBehaviour {
 
     public GameObject shadow;
     public GameObject timerObj;
-    public ParticleSystem dustCloud;
+    //public ParticleSystem dustCloud;
+    public GameObject dustCloud;
     public GameObject ground;
     private CountdownTimer timer;
     private bool hasHitGround;
@@ -67,7 +68,8 @@ public class Player : MonoBehaviour {
         if (controller.collisions.below && !hasHitGround)
         {
             hasHitGround = true;
-            dustCloud.Play();
+            // instantiate a new dustcloud gameobject at the position of the current game object
+            GameObject b = Instantiate(dustCloud, transform.position , transform.rotation);  
         }
 
         if (!controller.collisions.below)
