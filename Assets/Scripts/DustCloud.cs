@@ -8,7 +8,7 @@ public class DustCloud : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+
         dustcloud.Play();
         Object.Destroy(gameObject, 2.0f);
     }
