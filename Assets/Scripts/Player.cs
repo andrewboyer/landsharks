@@ -77,13 +77,11 @@ public class Player : MonoBehaviour {
             }
             hasHitGround = true;
             // instantiate a new dustcloud gameobject at the position of the current game object
-<<<<<<< HEAD
-            GameObject b = Instantiate(dustCloud, transform.position, transform.rotation);  
-=======
+
             Vector3 newPos = new Vector3(transform.position.x, transform.position.y - dustCloudModifier, transform.position.z);
             //GameObject b = Instantiate(dustCloud, transform.position , transform.rotation);
             GameObject b = Instantiate(dustCloud, newPos, transform.rotation);
->>>>>>> origin/master
+
         }
 
         if (!controller.collisions.below)
